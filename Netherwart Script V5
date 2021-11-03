@@ -1,3 +1,44 @@
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+DetectHiddenWindows, On
+SetTitleMatchMode, 2
+
+Gui,1:+AlwaysOnTop
+Gui, Color, EEAA99
+Gui, Add, Edit, x12 y10 w120 h20 vPressAD gGui_123,
+Gui, Add, Edit, x12 y40 w120 h20 vPlayerSpeed gGui_123,
+Gui, Add, Edit, x12 y70 w120 h20 vPressW gGui_123,
+Gui, Add, Edit, x12 y100 w120 h20 vClick1 gGui_123
+
+
+Gui, Add, Text, x142 y10 w100 h25 , Farm Length (Blocks)
+Gui, Add, Text, x142 y40 w100 h25 , Player Speed
+Gui, Add, Text, x142 y70 w100 h25 , Time get to next row (seconds)
+Gui, Add, Text, x142 y100 w100 h25 , Change Attack/Destroy to
+Gui, Add, Text, x12 y130 w610 h20 , Nether Wart Macro
+Gui, Add, Text, x12 y150 w610 h20 , Made and Distributed by Bapelord16
+Gui, Add, Text, x12 y170 w170 h25 , Press - to start
+Gui, Add, Text, x228 y180 w170 h25 , V5
+
+Gui, Show, w260 h200, Macro
+
+
+return
+
+GuiClose:
+    ExitApp
+
+Gui_123:
+Gui, Submit, NoHide
+
+Random, Value4 , 450, 550
+PlayerSpeed *= 0.042
+PressAD /= %PlayerSpeed%
+PressAD *= %Value4%
+PressW *= 1000
+
+-::
+ChatoptionsCounter := 1
 Loop
 {
     Random, , NewSeed
