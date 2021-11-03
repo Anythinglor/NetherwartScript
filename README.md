@@ -1,2 +1,1 @@
-# NetherwartScript
-Values
+True
