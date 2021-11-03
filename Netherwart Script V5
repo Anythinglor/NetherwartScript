@@ -1,0 +1,142 @@
+Loop
+{
+    Random, , NewSeed
+    Loop 
+    {
+        loop 
+		{
+		Gosub HarvestRight
+		sleep 1000
+
+		Gosub HarvestLeft
+        	sleep 1000
+        
+		Gosub ClickFailsafe
+		sleep 1000
+
+		Gosub ChatFailsafe
+		
+		sleep 1000
+
+	
+		sleep 1000
+
+		Gosub HarvestRight
+		sleep 1000
+
+		Gosub HarvestLeft
+                sleep 1000
+	
+		sleep 1000
+		Gosub ChatFailsafe
+	
+		sleep 1000
+        	}
+        }
+    SetKeyDelay, 200, 200
+    ControlSend,, /l {Enter}, ahk_exe javaw.exe
+    sleep 60000
+    ControlSend,, /skyblock {Enter}, ahk_exe javaw.exe
+    Sleep 15000
+    ControlSend,, /warp home {Enter}, ahk_exe javaw.exe
+    sleep 10000
+    Send,, {Shift down} 
+    sleep 2000
+    Send,, {Shift up} 
+    sleep 200
+    ControlSend,, t here comes another hour of farming fml {Enter}, ahk_exe javaw.exe
+    sleep 1000
+}
+Return
+
+ChatFailsafe:
+    SetKeyDelay, 260, 200
+    ControlSend,, /setspawn {Enter}, ahk_exe javaw.exe
+    sleep 1000
+    ControlSend,, /skyblock {Enter}, ahk_exe javaw.exe
+    sleep 1000
+    ControlSend,, /warp home {Enter}, ahk_exe javaw.exe
+    sleep 1000
+    Send,, {Shift down} 
+    sleep 2000
+    Send,, {Shift up} 
+    sleep 200
+Return
+
+ClickFailsafe:
+    SetKeyDelay, 250, 200
+    ControlSend,, {%Click1% down}, ahk_exe javaw.exe
+    sleep 100
+    ControlSend,, {%Click1% up}, ahk_exe javaw.exe
+    MouseClick, left,,,,,,
+Return
+
+
+HarvestRight: 
+    SetKeyDelay, 50, 70
+    ControlSend,, {%Click1% down}, ahk_exe javaw.exe
+    sleep 400
+    ControlSend,, {w down}, ahk_exe javaw.exe
+    sleep %PressW%
+    ControlSend,, {w up}, ahk_exe javaw.exe
+    sleep 100
+    ControlSend,, {d down}, ahk_exe javaw.exe
+    sleep 200
+    ControlSend,, {s down}, ahk_exe javaw.exe
+    sleep, %PressAD%
+    ControlSend,, {s down}, ahk_exe javaw.exe
+    sleep, 200
+    ControlSend,, {s up}, ahk_exe javaw.exe
+    sleep, 100
+    ControlSend,, {w down}, ahk_exe javaw.exe
+    sleep, 200
+    ControlSend,, {w up}, ahk_exe javaw.exe
+    sleep, 200
+    ControlSend,, {s down}, ahk_exe javaw.exe
+    sleep, %PressAD%
+    ControlSend,, {d up}, ahk_exe javaw.exe
+    sleep 100
+    ControlSend,, {s up}, ahk_exe javaw.exe
+    sleep 100
+return
+
+HarvestLeft:
+    SetKeyDelay, 50, 70
+    ControlSend,, {w down}, ahk_exe javaw.exe
+    sleep %PressW%
+    ControlSend,, {w up}, ahk_exe javaw.exe
+    sleep 100
+    ControlSend,, {a down}, ahk_exe javaw.exe
+    sleep 100
+    ControlSend,, {s down}, ahk_exe javaw.exe
+    sleep, %PressAD%
+    ControlSend,, {s up}, ahk_exe javaw.exe
+    sleep, 100
+    ControlSend,, {w down}, ahk_exe javaw.exe
+    sleep, 200
+    ControlSend,, {w up}, ahk_exe javaw.exe
+    sleep 200
+    ControlSend,, {s down}, ahk_exe javaw.exe
+    sleep, 200
+    sleep, %PressAD%
+    ControlSend,, {d up}, ahk_exe javaw.exe
+    sleep 100
+    ControlSend,, {a up}, ahk_exe javaw.exe
+    sleep 100
+    ControlSend,, {%Click1% up}, ahk_exe javaw.exe
+Return
+
+
+
+F12::
+ControlSend,, {a up}, ahk_exe javaw.exe
+sleep 100
+ControlSend,, {w up}, ahk_exe javaw.exe
+sleep 100
+ControlSend,, {s up}, ahk_exe javaw.exe
+sleep 100
+ControlSend,, {d up}, ahk_exe javaw.exe
+sleep 100
+ControlSend,, {%Click1% up}, ahk_exe javaw.exe
+sleep 100
+ExitApp
